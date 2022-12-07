@@ -49,7 +49,7 @@ public class Folder extends Element
 
         folderList.add(this);
 
-        for (Element e : children)
+        for (Element e : this.children)
             if (e instanceof Folder f)
                 folderList.addAll(f.getAllFolders());
 

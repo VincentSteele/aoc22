@@ -11,7 +11,7 @@ public abstract class Element
 
     public String getName()
     {
-        return name;
+        return this.name;
     }
 
     public abstract int getSize();

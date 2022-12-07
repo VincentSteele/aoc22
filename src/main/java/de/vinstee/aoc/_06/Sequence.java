@@ -10,23 +10,23 @@ public class Sequence
 
     public Sequence(int size)
     {
-        characters = new ArrayList<>(size);
+        this.characters = new ArrayList<>(size);
         this.maxSize = size;
     }
 
     public void add(char character)
     {
-        if (characters.size() == maxSize)
-            characters.remove(0);
+        if (this.characters.size() == this.maxSize)
+            this.characters.remove(0);
 
-        characters.add(character);
+        this.characters.add(character);
     }
 
     public boolean hasNoDuplicateCharacter()
     {
-        for (int i = 0; i < characters.size(); i++)
-            for (int j = i + 1; j < characters.size(); j++)
-                if (characters.get(i).equals(characters.get(j)))
+        for (int i = 0; i < this.characters.size(); i++)
+            for (int j = i + 1; j < this.characters.size(); j++)
+                if (this.characters.get(i).equals(this.characters.get(j)))
                     return false;
 
         return true;
