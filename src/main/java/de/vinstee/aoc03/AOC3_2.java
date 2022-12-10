@@ -1,10 +1,10 @@
-package de.vinstee.aoc._03;
+package de.vinstee.aoc03;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class AOC3
+public class AOC3_2
 {
     public static void main(String[] args) throws IOException
     {
@@ -14,10 +14,11 @@ public class AOC3
 
         for (String line = reader.readLine(); line != null; line = reader.readLine())
         {
-            String comp1 = line.substring(0, line.length() / 2);
-            String comp2 = line.substring(line.length() / 2);
+            String sack1 = line;
+            String sack2 = reader.readLine();
+            String sack3 = reader.readLine();
 
-            String dupLetter = getDuplicateLetter(comp1, comp2);
+            String dupLetter = getDuplicateLetter(sack1, sack2, sack3);
 
             if (dupLetter != null)
                 totalPriorities += getPriorityValue(dupLetter);
@@ -28,31 +29,18 @@ public class AOC3
         reader.close();
     }
 
-    public static String getDuplicateLetter(String compartment1, String compartment2)
+    public static String getDuplicateLetter(String sack1, String sack2, String sack3)
     {
-        for (int i = 0; i < compartment1.length(); i++)
-            for (int j = 0; j < compartment2.length(); j++)
-                if (compartment1.charAt(i) == compartment2.charAt(j))
-                    return compartment1.substring(i, i + 1);
+        for (int i = 0; i < sack1.length(); i++)
+            for (int j = 0; j < sack2.length(); j++)
+                for (int k = 0; k < sack3.length(); k++)
+                    if ((sack1.charAt(i) == sack2.charAt(j)) && (sack2.charAt(j)== sack3.charAt(k)))
+                        return sack1.substring(i, i + 1);
 
         return null;
     }
 
     public static int getPriorityValue(String character)
-    {
-        int code = character.charAt(0);
-        int priority;
-
-        if (code >= 65 && code <=90) // ASCII Codes for big letters
-            priority = code - 64 + 26;
-        else
-            priority = code - 96;
-
-        return priority;
-    }
-
-    @Deprecated(forRemoval = true)
-    public static int getPriorityValueLame(String character)
     {
         return switch (character)
                 {

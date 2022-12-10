@@ -1,4 +1,4 @@
-package de.vinstee.aoc._08;
+package de.vinstee.aoc08;
 
 import java.util.Arrays;
 

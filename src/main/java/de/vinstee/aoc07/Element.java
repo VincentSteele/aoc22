@@ -1,4 +1,4 @@
-package de.vinstee.aoc._07;
+package de.vinstee.aoc07;
 
 public abstract class Element
 {

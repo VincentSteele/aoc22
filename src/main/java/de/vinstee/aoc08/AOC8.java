@@ -1,4 +1,4 @@
-package de.vinstee.aoc._08;
+package de.vinstee.aoc08;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,4 +1,4 @@
-package de.vinstee.aoc._07;
+package de.vinstee.aoc07;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

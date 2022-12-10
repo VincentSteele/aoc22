@@ -1,4 +1,4 @@
-package de.vinstee.aoc._04;
+package de.vinstee.aoc04;
 
 public class Range
 {
